@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio</title>
+</head>
+<body>
+    <header>
+        <img src=logo.jpg alt="logo">
+        <h1>HTML Projekt</h1>
+        
+    </header>
+    <nav>
+       <ul>
+           <li><a href="über_mich.html">Über mich</a></li>
+           <li><a href="kontakt.html">Kontakt</a></li>
+           
+       </ul>
+    </nav>
+    <main>
+       <!--Allgemeines--> 
+       <article>
+           <h2>Meine Portfolio Seite</h2>
+           <P>Neben meine Arbeiten finden Sie hier auch Infos zu meiner Person und Kontaktdaten</P>
+       </article>
+       <!--Meine Arbeiten--> 
+       <article>
+           <h2>Meine Arbeiten</h2>
+           <P>Hier sind einge meiner Arbeiten, die ich privat in der Freizeit oder im Rahmen meines Studiums an der  
+               <span>
+                   <a href="https://www.hs-furtwangen.de/">HFU</a>
+               </span>in der Fakultät "Digitale Medien" im 
+               Studiengang MIB gemacht habe.
+            </P>
+
+
+           <!--Für jede Arbeit eine eigene Section-->
+           <!--Erste Arbeit-->
+           <section>
+               <h3>Bau einer Terrasse</h3>
+               <p>Zusammen mit meinen Freunden bauen wir gerade eine Terrasse, damit wir, im Sommer und nach der Pandemie, zusammen das eine oder andere bier trinken können</p>
+               <P>Musik zur Motivation, wenn mal alles weh tut, ist notwendig. Die meiste Zeit hören wir Rap oder Bands wie "Rammstein".</P>
+               <!--Medien-->
+               <div>
+                   <!--Audio-->
+                   <div>
+                      <h4>Unsere Musik</h4>
+                      <audio controls>
+                         <source src="horse.ogg" type="audio/ogg">
+                         <source src="Para.mp3" type="audio/mpeg">
+                          No support from Browser
+                      </audio>
+                      <aside>Song (Album): Para (Hyäne) </aside>
+                      <aside>Interpret: Timatic </aside>
+                    </div>
+                    <br>
+                     <!--Bilder-->
+                    <div>
+                        <div>
+                            <h4>Unsere Baustelle</h4>
+                            <img src="Baustelle1.jpg" alt="Baustelle_oben">
+                            <img src="Baustelle2.jpg" alt="Baustelle_unten">
+                        </div>
+                        <br>
+                        <div>
+                            <p>... und nach, vor und während der Arbeit</p>
+                            <img src="Bier.jpg" alt="Bier">
+                            <aside>Quelle: Yannick Kraus </aside>
+                        </div>
+                    </div>
+                   
+                  
+               </div>
+           </section>
+           <!--Zweite Arbeit-->
+           <section>
+                <h3>Planspiel Unternehmensgründung</h3>
+                <p>In unserer Gruppe haben wir die Gründung der Firma "AntiNOISE" durchgespielt.</p>
+                <!--Bilder-->
+                <div>
+                    <img src="AntiNOISE.JPG" alt="AntiNIOSE">
+                    <aside>Quelle: Yannick Kraus, Nils Schiffmann, Justus Schultzke, Yannis Dold, Halid Altindas</aside>
+                </div>
+            </section>
+            <!--Dritte Arbeit-->
+            <section>
+                <h3>Physik "Optik des menschlichen Auges</h3>
+                <p>Zusammen mit Zara Kocak und Immanuel Leinert haben wir die "Optik des menschlichen Auges" erötert</p>
+                <div>
+                    <h4>Videos</h4>
+                    <video width="640" height="480" controls>
+                         <source src="Optik_menschliches_Auge.mp4" type="video/mp4">
+                         <source src="movie.ogg" type="video/ogg">
+                                  No support from Browser.
+                    </video>
+                    <aside>Quelle: Yannick Kraus, Zara Kocak, Immanuel Leinert</aside>
+
+                    
+
+                    </div>
+            </section>
+            <!--Vierte Arbeit-->
+            <section>
+                <h3>Computergrafik</h3>
+                <p>Beispiele mit Blender</p>
+                <div>
+                    <img src="Blender_U_Boot.PNG" alt="Blender U-Boot">
+                    <img src="Blender_Schatztruhe.PNG" alt="Blender Schatztruhe">
+                    <img src="Blender_Koralle.JPG" alt="Blender Koralle">
+                    <aside>Quelle: Yannick Kraus</aside>
+                </div>
+            </section>
+       </article>
+
+    </main>
+
+
+    <footer>
+        <p>created <time>2021-04-04</time> by Yannick Kraus</p>
+    </footer>
+    
+</body>
+</html>
