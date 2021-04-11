@@ -1,0 +1,84 @@
+/* Globale settings */
+body {
+    background-image: url("media/bilder/hintergrund.png");
+    font-family: sans-serif;
+    width: 800px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+   
+}
+/* Navigation */
+.navlist {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: auto;
+}
+.navitems {
+    border-left: 1px solid #bbb;
+    float: left;
+    text-decoration: none;
+}
+.navitems a:hover {
+    background-color: silver;
+}
+.navitems a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#activeitem {
+    color: red;
+}
+/*Kontakteingabefelder*/
+form{
+  text-align: left;
+}
+input[type=text] {
+    width: 35%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    box-sizing: border-box;
+    background-color: lightgrey;
+}
+input[type=submit] {
+    width: 15%;
+    background-color:lightgrey;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#Beschreibungstext {
+    color:grey;
+    font-size: small;
+}
+/*Für Facebook*/
+#facebook :hover {
+    background-color:blue;
+}
+header{
+  margin:auto;  
+  background-color:cadetblue;
+}
+h2,h3,h4{
+    color:cadetblue;
+    text-align:left;
+}
+p,ol,ul{
+     text-align:left;
+}
+#addr{
+    text-align:left;
+}

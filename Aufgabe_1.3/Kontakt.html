@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+ 
+    <header>
+        <img src=media/bilder/logo.jpg alt="logo">
+        <h1>HTML Projekt</h1>
+        <div id="facebook">
+            <a href="https://www.facebook.com/" target="_blank"><img src="media/bilder/facebook.png" alt="facebook"></a>
+        </div>
+    </header>
+    <nav>
+       <ul class="navlist">
+        <li class="navitems"><a href="Portfolio.html">Portfolio</a></li>
+        <li class="navitems"><a href="ueber_mich.html">Über mich</a></li> 
+        <li class="navitems"><a id="activeitem" href="Kontakt.html">Kontakt</a></li>
+                     
+       </ul>
+    </nav>
+
+    <main>
+        <div>
+            <h2>Wie ihr mit mir Konakt aufnehmen könnt</h2>
+            <p>Wenn ihr mich kontaktieren möchtet, könnt ihr das gerne tun über:</p>  
+            <ol>
+                <li><a href="#addr">ganz klassisch per Post</a></li>
+                <li><a href="#addr">telefonisch</a></li>
+                <li><a href="#addr">per mail</a></li>
+                <li><a href="#addr">Instagramm</a></li>
+            </ol> 
+        </div>
+            <br>
+            
+            <div>
+                <h3>Anschrift</h3>
+                <address id="addr">
+                  <P>Yannick Kraus</P>
+                  <p>Weiherweg 4</p>
+                  <p>78739 Hardt</p>
+                  <p>Telefonisch meistens erreichbar unter 
+                  <a href="tel:+4915150595505">0151 50595505</a>
+                  </p>
+
+                  <a href="mailto:yannick10krause@gmail.com">Sende eine email an yannick10kraus@gmail.com</a>
+                </address>
+            </div>
+            <div>
+                <h3>Kontakt</h3>
+                <form>
+                    <div>
+                        <input type="text" id="fname" name="fname" placeholder="Vorname">
+                    </div>
+                   
+                    <div>
+                        <input type="text" id="lname" name="lname" placeholder="Nachname">
+                    </div>
+        
+                    <div>
+                        <input type="text" id="mail" name="mail" placeholder="E-Mail">
+                    </div>
+                   
+                    <div>
+                        <input type="text" id="message" name="message" placeholder="Nachricht">
+                    </div>
+                    <p id="Beschreibungstext">
+                        Mit Absenden der Nachricht bestätigen Sie den Datenschutz.
+                    </p>
+                    <div>
+                        <input type="submit" value="Senden">
+                    </div>
+                    
+                </form>
+            </div>
+     </main>
+   
+     <br>
+    <footer>
+        <p>created <time>2021-04-04</time> by Yannick Kraus</p>
+    </footer>
+
+</body>
+
+
+
+</html>
