@@ -5,7 +5,7 @@
 //um die Verwendung zu demonstrieren
 var klappbuch;
 (function (klappbuch) {
-    klappbuch.book = { heads: { ident: "heads", pictures: ["media/pictures/img1.jpg", "media/pictures/img4.jpg",
+    klappbuch.book1 = { heads: { ident: "heads", pictures: ["media/pictures/img1.jpg", "media/pictures/img4.jpg",
                 "media/pictures/img2.jpg", "media/pictures/img3.jpg"],
             selectedItem: -1 },
         bodies: { ident: "bodies", pictures: ["media/pictures/img1.jpg", "media/pictures/img4.jpg"],

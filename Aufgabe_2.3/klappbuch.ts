@@ -56,14 +56,14 @@ function onClickFunc(_map: Imagemap, zahl: number): void {
     console.log("NEW CLICK");   //Testausgabe
     console.log("Index: " + zahl);          //Testausgabe des Index
     _map.selectedItem = zahl;
-    console.log(book);         //Ausgabe geändertes book auf Console
+    console.log(book1);         //Ausgabe geändertes book auf Console
     
     }
 
 
 //Alle Bilder für die Köpfe auf heads.html erzeugen
-createAllTheImages(book.heads);
-console.log(book);   //Ausgabe book auf console (Initialzustand)
+createAllTheImages(book1.heads);
+console.log(book1);   //Ausgabe book auf console (Initialzustand)
 
 //Später folgen die anderen Unterseiten und die Erzeugung deren Bilder in gleicher Weise
 

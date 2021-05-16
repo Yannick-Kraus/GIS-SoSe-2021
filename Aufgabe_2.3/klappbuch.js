@@ -28,11 +28,11 @@ var klappbuch;
         console.log("NEW CLICK"); //Testausgabe
         console.log("Index: " + zahl); //Testausgabe des Index
         _map.selectedItem = zahl;
-        console.log(klappbuch.book); //Ausgabe geändertes book auf Console
+        console.log(klappbuch.book1); //Ausgabe geändertes book auf Console
     }
     //Alle Bilder für die Köpfe auf heads.html erzeugen
-    createAllTheImages(klappbuch.book.heads);
-    console.log(klappbuch.book); //Ausgabe book auf console (Initialzustand)
+    createAllTheImages(klappbuch.book1.heads);
+    console.log(klappbuch.book1); //Ausgabe book auf console (Initialzustand)
     //Später folgen die anderen Unterseiten und die Erzeugung deren Bilder in gleicher Weise
 })(klappbuch || (klappbuch = {}));
 //# sourceMappingURL=klappbuch.js.map

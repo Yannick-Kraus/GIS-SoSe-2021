@@ -5,7 +5,7 @@
 
 
 namespace klappbuch {
-export let book: TheBook = {heads: {ident: "heads", pictures: ["media/pictures/img1.jpg", "media/pictures/img4.jpg", 
+export let book1: TheBook = {heads: {ident: "heads", pictures: ["media/pictures/img1.jpg", "media/pictures/img4.jpg", 
                                                                "media/pictures/img2.jpg", "media/pictures/img3.jpg" ], 
                                     selectedItem: -1}, 
                             bodies: {ident: "bodies", pictures: ["media/pictures/img1.jpg", "media/pictures/img4.jpg"],
