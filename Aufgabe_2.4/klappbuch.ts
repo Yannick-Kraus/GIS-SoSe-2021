@@ -75,12 +75,12 @@ function createAllTheImages(_map: Imagemap): void {
 
 //Eventlistener für click. SelectedItem im endsprechenden Interface wird auf den index
 //des Bildarrays (pictures) gesetzt, welche geclickt wurde
-function onClickFunc(_map: Imagemap, zahl: number): void {
+function onClickFunc(_map: Imagemap, _zahl: number): void {
     console.log("NEW CLICK");   //Testausgabe
-    console.log("Index: " + zahl);          //Testausgabe des Index
-    _map.selectedItem = zahl;
+    console.log("Index: " + _zahl);          //Testausgabe des Index
+    _map.selectedItem = _zahl;
     console.log(book);         //Ausgabe geändertes book auf Console
-    overwriteImageLink(document.title + "sel", _map.pictures[zahl]);
+    overwriteImageLink(document.title + "sel", _map.pictures[_zahl]);
 
     //Alle ausgewählt
     if ( checkAllSelected(book) == true) {
@@ -153,9 +153,9 @@ function checkAllSelected(_book: TheBook): boolean {
  }    
 
 
-function overwriteImageLink (item: string, newlink: string): void {
-  let element: HTMLElement = document.getElementById(item);  
-  element.setAttribute("src", newlink);
+function overwriteImageLink (_item: string, _newlink: string): void {
+  let element: HTMLElement = document.getElementById(_item);  
+  element.setAttribute("src", _newlink);
 }
 
 //book Objekt im Cache des Browsers speichern
@@ -184,8 +184,8 @@ console.log(book);   //Ausgabe book auf console (Initialzustand)
 
 //######################## Aufgabe 1.a. JSON Test ##############################
 
-function convertFromJson(jsonString: string): TheBook {
-  return JSON.parse(jsonString); 
+function convertFromJson(_jsonString: string): TheBook {
+  return JSON.parse(_jsonString); 
 }
 
 let book2: TheBook;
