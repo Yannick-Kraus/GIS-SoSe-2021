@@ -1,6 +1,14 @@
 "use strict";
 var klappbuch;
 (function (klappbuch) {
+    // Variable book zum Test mit je 2 Bilder pro Imagemap vorinitialisieren, falls loadFromJson() fehlschlägt und 
+    //keine Sessiondaten vorhanden sind somit gleich erkennbar (nur 2 statt 4 Bilder)
+    let book = { heads: { ident: "heads", pictures: ["media/pictures/img1.jpg", "media/pictures/img2.jpg"],
+            selectedItem: -1 },
+        bodies: { ident: "bodies", pictures: ["media/pictures/img11.jpg", "media/pictures/img12.jpg"],
+            selectedItem: -1 },
+        legs: { ident: "legs", pictures: ["media/pictures/img21.jpg", "media/pictures/img22.jpg"],
+            selectedItem: -1 } };
     //Seite erzeugen. Auswahlkriterium ist der "Title" der Seite, welcher identisch mit Ident des Interfaces Imagemap 
     //sein muss. Andernfalls wird nichts angezeigt.
     function createThePage(_book) {
@@ -17,7 +25,7 @@ var klappbuch;
             theMap = _book.legs;
         }
         else if (theTitle === "klappbuch") {
-            createKlappbuch(klappbuch.book3);
+            createKlappbuch(book);
         }
         //wenn Variable theMap gültig gesetzt, Seite erzeugen
         if (theMap) {
@@ -44,10 +52,10 @@ var klappbuch;
         console.log("NEW CLICK"); //Testausgabe
         console.log("Index: " + _zahl); //Testausgabe des Index
         _map.selectedItem = _zahl;
-        console.log(klappbuch.book3); //Ausgabe geändertes book auf Console
+        console.log(book); //Ausgabe geändertes book auf Console
         overwriteImageLink(document.title + "sel", _map.pictures[_zahl]);
         //Alle ausgewählt
-        if (checkAllSelected(klappbuch.book3) == true) {
+        if (checkAllSelected(book) == true) {
             saveSession();
             window.open("klappbuch.html", "_self");
         }
@@ -77,6 +85,7 @@ var klappbuch;
         displayImage(_book.heads.pictures[_book.heads.selectedItem]);
         displayImage(_book.bodies.pictures[_book.bodies.selectedItem]);
         displayImage(_book.legs.pictures[_book.legs.selectedItem]);
+        saveToServer(); //auf Server speichern
         //Auswahl zurücksetzen
         _book.heads.selectedItem = -1;
         _book.bodies.selectedItem = -1;
@@ -103,30 +112,70 @@ var klappbuch;
     //book Objekt im Cache des Browsers speichern
     //Da nur strings abgespeichert werden können, erzeugen eines JSON strings aus book und abspeichern dieses strings
     function saveSession() {
-        sessionStorage.setItem("my", JSON.stringify(klappbuch.book3));
+        sessionStorage.setItem("my", JSON.stringify(book));
     }
     function restoreFromSession() {
         let bookFromJson;
         bookFromJson = JSON.parse(sessionStorage.getItem("my"));
         //Wenn gültig Objekt book ersetzten, sonst belassen (neu anfangen da Book initialisiert in data.ts)
         if (bookFromJson) {
-            klappbuch.book3 = bookFromJson;
+            book = bookFromJson;
         }
     }
-    //Die Seiteninhalte für die jeweilige Seite heads.html, bodies.html oder legs.html erzeugen
-    restoreFromSession();
-    createThePage(klappbuch.book3);
-    displayPreview(klappbuch.book3);
-    console.log(klappbuch.book3); //Ausgabe book auf console (Initialzustand)
-    //######################## Aufgabe 1.a. JSON Test ##############################
-    function convertFromJson(_jsonString) {
-        return JSON.parse(_jsonString);
-    }
     let book2;
-    //Objekt book2 aus Json string (myJsonFromBook in data.ts)  erzeugen und ausgeben
-    book2 = convertFromJson(klappbuch.myJsonFromBook1);
-    console.log("book2");
-    console.log(book2);
-    //###################### END Aufgabe 1.a.  JSON Test##########################
+    let myRequestObj = new Request("./data.json");
+    //Initialisieren des Objektes book aus der JSON-Datai "data.json"
+    //### wegen fetch() LiveServer erforderlich ##############
+    async function loadFromJson(_myFile) {
+        let myObjekt = await fetch(_myFile);
+        book = await myObjekt.json();
+        console.log("loading");
+        console.log(book2);
+        console.log("loading end");
+        console.log(myObjekt);
+    }
+    // Da "await" nur in async-function geht, aber auf die Initialisierung des Objektes book aus der JSON-Datei
+    //gewartet werden muss , alles in eine
+    //async-function "myApp" gepackt um den Ablauf zu synchronisieren.
+    async function myApp() {
+        //Die Seiteninhalte für die jeweilige Seite heads.html, bodies.html oder legs.html erzeugen
+        await loadFromJson(myRequestObj); //Initialwerte für book aus data.json und warten
+        console.log("book");
+        console.log(book);
+        restoreFromSession(); //Initialwerte überschreiben falls sessionstor
+        createThePage(book);
+        displayPreview(book);
+        console.log(book); //Ausgabe book auf console (Initialzustand)
+    }
+    myApp();
+    //Server response Objekt
+    //Im Falle von "Error" Antwort rot hinterlegen, bei "Message" endsprechend grün
+    let myServerResponse;
+    function DisplayTheServerResponse() {
+        let div = document.getElementById("srvresp");
+        let headline = document.createElement("h3");
+        if (myServerResponse.error != undefined) {
+            headline.innerText = myServerResponse.error;
+            div.style.backgroundColor = "red";
+        }
+        else if (myServerResponse.message != undefined) {
+            headline.innerText = myServerResponse.message;
+            div.style.backgroundColor = "green";
+        }
+        div.appendChild(headline);
+    }
+    //Daten aus Browsercache (hier sessionStorage) an Server senden
+    async function send2Url(_myRequest) {
+        let query = new URLSearchParams(JSON.parse(sessionStorage.getItem("my")));
+        _myRequest = _myRequest + "?" + query.toString();
+        myServerResponse = await (await fetch(_myRequest)).json();
+        console.log(myServerResponse);
+    }
+    //Senden und Antwort anzeigen
+    async function saveToServer() {
+        await send2Url("https://gis-communication.herokuapp.com");
+        //Display
+        DisplayTheServerResponse();
+    }
 })(klappbuch || (klappbuch = {}));
 //# sourceMappingURL=klappbuch.js.map

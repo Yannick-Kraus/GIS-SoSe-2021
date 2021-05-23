@@ -5,7 +5,7 @@
 
 
 namespace klappbuch {
-export let book: TheBook = {heads: {ident: "heads", pictures: ["media/pictures/img1.jpg", "media/pictures/img2.jpg", 
+export let book3: TheBook = {heads: {ident: "heads", pictures: ["media/pictures/img1.jpg", "media/pictures/img2.jpg", 
                                                                "media/pictures/img3.jpg", "media/pictures/img4.jpg"], 
                                     selectedItem: -1}, 
                             bodies: {ident: "bodies", pictures: ["media/pictures/img11.jpg", "media/pictures/img12.jpg", 
@@ -18,7 +18,7 @@ export let book: TheBook = {heads: {ident: "heads", pictures: ["media/pictures/i
 
 
 //Manuell konvertiertes book Objekt in JSON
-export let myJsonFromBook: string = 
+export let myJsonFromBook1: string = 
 `
 {
         "heads":{

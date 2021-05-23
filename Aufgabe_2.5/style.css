@@ -1,0 +1,54 @@
+* {
+    font-family: sans-serif;
+}
+
+.zeile {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.spalte {
+    flex: 50%;
+    padding: 0 4px;
+}
+
+.spalte img {
+    margin: 8px;
+    vertical-align: middle;
+    width: 300px;
+    height: 300px;
+}
+
+.selection {
+    text-align: center;
+}
+
+.selectedItems img {
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+}
+
+#image {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+   
+ 
+}
+
+body {
+    text-align: center;  
+}
+
+#image img {
+    width: 150px;
+    height: 150px;  
+    text-align: center;
+    vertical-align: top;
+  
+    padding: 0 0px;
+}
