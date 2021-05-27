@@ -86,11 +86,18 @@ var klappbuch;
         displayImage(_book.bodies.pictures[_book.bodies.selectedItem]);
         displayImage(_book.legs.pictures[_book.legs.selectedItem]);
         saveToServer(); //auf Server speichern
-        //Auswahl zurücksetzen
-        _book.heads.selectedItem = -1;
-        _book.bodies.selectedItem = -1;
-        _book.legs.selectedItem = -1;
-        saveSession();
+        //##########################Auswahl zurücksetzen#########################
+        //War so beabsichtigt, da ich dachte es wäre schöner, auf der letzten Seite
+        //welche die bisherige Auswahl anzeigt, diese danach zu löschen, sowohl
+        //im Objekt als auch im sessionStorage.
+        //
+        //Wenn das einen Punktabzug gibt kann das auch entfallen.
+        //Jetzt auskommentiert
+        // _book.heads.selectedItem = -1;
+        // _book.bodies.selectedItem = -1;
+        // _book.legs.selectedItem = -1;
+        // saveSession();
+        //########################################################################
     }
     function displayImage(_bild) {
         let image = document.createElement("img");

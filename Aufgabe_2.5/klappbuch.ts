@@ -131,13 +131,22 @@ function createKlappbuch(_book: TheBook): void {
     displayImage(_book.heads.pictures[_book.heads.selectedItem]);
     displayImage(_book.bodies.pictures[_book.bodies.selectedItem]);
     displayImage(_book.legs.pictures[_book.legs.selectedItem]);
-    saveToServer();             //auf Server speichern
-    //Auswahl zurücksetzen
-    _book.heads.selectedItem = -1;
-    _book.bodies.selectedItem = -1;
-    _book.legs.selectedItem = -1;
-    saveSession();
+    saveToServer();  //auf Server speichern
 
+    //##########################Auswahl zurücksetzen#########################
+    //War so beabsichtigt, da ich dachte es wäre schöner, auf der letzten Seite
+    //welche die bisherige Auswahl anzeigt, diese danach zu löschen, sowohl
+    //im Objekt als auch im sessionStorage.
+    //
+    //Wenn das einen Punktabzug gibt kann das auch entfallen.
+    //Jetzt auskommentiert
+
+    // _book.heads.selectedItem = -1;
+    // _book.bodies.selectedItem = -1;
+    // _book.legs.selectedItem = -1;
+    // saveSession();
+    
+    //########################################################################
 
 }
 
@@ -192,7 +201,7 @@ let myRequestObj: Request = new Request("./data.json");
 //### wegen fetch() LiveServer erforderlich ##############
 async function loadFromJson(_myFile: RequestInfo): Promise<void> {
     let myObjekt: Response = await fetch(_myFile);
-    book = await myObjekt.json();
+    book = <TheBook> await myObjekt.json();
     console.log("loading");
     console.log(book2);
     console.log("loading end");
@@ -253,7 +262,7 @@ function DisplayTheServerResponse(): void {
 async function send2Url (_myRequest: RequestInfo): Promise<void> {
     let query: URLSearchParams = new URLSearchParams(JSON.parse(sessionStorage.getItem("my")));
     _myRequest = _myRequest + "?" + query.toString();
-    myServerResponse = await (await fetch(_myRequest)).json();
+    myServerResponse = <Resp> await (await fetch(_myRequest)).json();
     console.log(myServerResponse);
 }
 
