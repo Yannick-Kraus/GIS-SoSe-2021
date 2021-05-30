@@ -413,8 +413,8 @@ function stop(): void {
 
 function aufgabe3(): void {
     drawNew();
-    myTimeout = setInterval(drawWithOffset, 50);
-    myTimeoutStop = setTimeout(stop, 3000);
+    myTimeout = <number> <unknown>setInterval(drawWithOffset, 50);
+    myTimeoutStop =  <number> <unknown>setTimeout(stop, 3000);
 }
 
 //Auskommentieren um Bild aus Aufgabe 3a zu sehen

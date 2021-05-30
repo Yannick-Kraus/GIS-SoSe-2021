@@ -1,0 +1,21 @@
+{
+  "name": "yannicksgis",
+  "version": "1.0.0",
+  "description": "gis",
+  "main": "P_3_1Server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "node Aufgabe_3.1/P_3_1Server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yannick-Kraus/GIS-SoSe-2021.git"
+  },
+  "author": "Yannick Kraus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yannick-Kraus/GIS-SoSe-2021/issues"
+  },
+  "homepage": "https://github.com/Yannick-Kraus/GIS-SoSe-2021#readme"
+}
