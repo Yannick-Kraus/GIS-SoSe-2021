@@ -6,7 +6,7 @@ async function mySubmitFunc() {
     console.log(formData.get("username"));
     console.log(formData.get("pwd"));
     console.log(formData.get("LogInfo"));
-    await sendFormData2Url("http://localhost:8100", formData);
+    await sendFormData2Url("http://yannicksgis.herokuapp.com", formData);
     console.log("Serverantwort: ");
     console.log(myServerResponse);
 }
