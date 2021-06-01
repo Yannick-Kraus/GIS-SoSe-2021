@@ -2,11 +2,11 @@
   "name": "yannicksgis",
   "version": "1.0.0",
   "description": "gis",
-  "main": "P_3_1Server.js",
+  "main": "P_3_2Server.js",
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "start": "node Aufgabe_3.1/P_3_1Server.js"
+    "start": "node Aufgabe_3.2/P_3_2Server.js"
   },
   "repository": {
     "type": "git",
