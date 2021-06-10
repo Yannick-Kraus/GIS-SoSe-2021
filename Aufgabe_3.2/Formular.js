@@ -6,7 +6,7 @@ async function SubmitFuncHtml() {
     console.log(formData.get("username"));
     console.log(formData.get("pwd"));
     console.log(formData.get("LogInfo"));
-    await sendFormDataToUrlHtml("http://yannicksgis.herokuapp.com", formData);
+    await sendFormDataToUrlHtml("https://yannicksgis.herokuapp.com", formData);
     //await sendFormDataToUrlHtml ("http://localhost:8100", formData);
 }
 async function SubmitFuncJson() {
@@ -15,7 +15,7 @@ async function SubmitFuncJson() {
     console.log(formData.get("username"));
     console.log(formData.get("pwd"));
     console.log(formData.get("LogInfo"));
-    await sendFormDataToUrlJson("http://yannicksgis.herokuapp.com", formData);
+    await sendFormDataToUrlJson("https://yannicksgis.herokuapp.com", formData);
     //await sendFormDataToUrlJson ("http://localhost:8100", formData);
 }
 let buttonhtml = document.getElementById("myButtonhtml");

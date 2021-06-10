@@ -48,7 +48,7 @@ export namespace P_3_2Server {
         let myString: string = "";
 
         for (var pair of _mySearch.entries()) {
-            myString += "    " + pair[0] + "  IS  " + pair[1] + "         ";
+            myString += " " + pair[0] + " IS " + pair[1] + " ";
            
         }
 

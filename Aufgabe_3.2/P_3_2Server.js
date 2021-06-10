@@ -42,7 +42,7 @@ var P_3_2Server;
     function responseWithHtml(_mySearch) {
         let myString = "";
         for (var pair of _mySearch.entries()) {
-            myString += "    " + pair[0] + "  IS  " + pair[1] + "         ";
+            myString += " " + pair[0] + " IS " + pair[1] + " ";
         }
         return myString;
     }
