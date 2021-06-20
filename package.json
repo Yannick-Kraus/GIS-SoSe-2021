@@ -2,14 +2,14 @@
   "name": "yannicksgis",
   "version": "1.0.0",
   "description": "gis",
-  "main": "P_3_2Server.js",
+  "main": "P_3_4Server.js",
   "dependencies": {
     "@types/mongodb": "^3.6.18",
     "mongodb": "^3.6.9"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node Aufgabe_3.2/P_3_2Server.js"
+    "start": "node Aufgabe_3.4/P_3_4Server.js"
   },
   "repository": {
     "type": "git",

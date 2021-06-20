@@ -3,11 +3,6 @@ let myServerResponse4: string;
 
 
 async function SubmitFuncRead(): Promise<void> {
-    let formData: FormData = new FormData(document.forms[0]);
-    console.log("Einbegebene Daten:");
-    console.log(formData.get("name"));
-    console.log(formData.get("firstname"));
-    console.log(formData.get("registration"));
     await sendReadRequest ("https://yannicksgis.herokuapp.com");
     //await sendReadRequest ("http://localhost:8100");
 }
