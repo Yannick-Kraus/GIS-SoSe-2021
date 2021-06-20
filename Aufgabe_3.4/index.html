@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocumentDb</title>
+    <script defer src="Formular.js"></script>
+</head>
+<body>
+    <h2>Database read write</h2>     
+   
+    <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="firstname">Vorname:</label><br>
+        <input type="text" id="firstname" name="firstname"><br>
+        <label for="registration">Matrikelnummer:</label><br>
+        <input type="text" id="registration" name="registration"><br>
+    </form>
+    <br>
+    
+    <!--Zwei Buttons für schreiben und lesen-->
+    
+    <button id="myButtonWrite">Schreiben auf Datenbank</button>
+    <button id="myButtonRead">Lesen von Datenbank</button>
+    
+    
+    <div id="srvresp">
+       <!--Hier kommt die Serverantwort rein-->
+    </div>
+</body>
+</html>

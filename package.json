@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "gis",
   "main": "P_3_2Server.js",
-  "dependencies": {},
+  "dependencies": {
+    "@types/mongodb": "^3.6.18",
+    "mongodb": "^3.6.9"
+  },
   "devDependencies": {},
   "scripts": {
     "start": "node Aufgabe_3.2/P_3_2Server.js"
